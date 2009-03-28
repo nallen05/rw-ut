@@ -12,32 +12,32 @@ have the following advantages over normal universal times stored as integers:
    programs that expect times dates encoded as strings
 3. they are ISO-8601 compliant (by default)
 
-     CL-USER> (defvar now (get-universal-time))
-     NOW
+       CL-USER> (defvar now (get-universal-time))
+       NOW
  
-     CL-USER> now
-     3425557791
+       CL-USER> now
+       3425557791
  
-     CL-USER> (use-package :rw-ut)
-     T
+       CL-USER> (use-package :rw-ut)
+       T
  
-     CL-USER> (rw-ut:write-time-string now)
-     "2008/07/20 15:49:51"
+       CL-USER> (rw-ut:write-time-string now)
+       "2008/07/20 15:49:51"
  
-     CL-USER> (rw-ut:read-time-string *)
-     3425557791
+       CL-USER> (rw-ut:read-time-string *)
+       3425557791
  
-     CL-USER> (eql * now)
-     T
+       CL-USER> (eql * now)
+       T
  
-     CL-USER> (rw-ut:write-time-string now "MM-DD-YY")
-     "07-20-08"
+       CL-USER> (rw-ut:write-time-string now "MM-DD-YY")
+       "07-20-08"
  
-     CL-USER> (rw-ut:read-time-string * "MM-DD-YY")
-     3425500800
+       CL-USER> (rw-ut:read-time-string * "MM-DD-YY")
+       3425500800
  
-     CL-USER> (rw-ut:write-time-string * "YYYY/MM/DD)
-     "2008/07/20"
+       CL-USER> (rw-ut:write-time-string * "YYYY/MM/DD)
+       "2008/07/20"
  
 ## PATTERNS
  
@@ -122,16 +122,16 @@ read string that look like this:
  
 ## API
 
-- - -
- 
 * `READ-TIME-STRING (string &optional (pattern "YYYY-MM-DD hh:mm:ss"))`
- 
-   _Function_. Reads `STRING` according to the pattern string `PATTERN` and returns a
-   Universal Time intiger.
 
 - - -
  
+   _Function_. Reads `STRING` according to the pattern string `PATTERN` and returns a
+   Universal Time intiger.
+ 
 * `WRITE-TIME-STRING (ut &optional (pattern "YYYY-MM-DD hh:mm:ss"))`
+
+- - -
  
    _Function_. Writes the universal time integer `UT` as a string according to the
     pattern string `PATTERN`
