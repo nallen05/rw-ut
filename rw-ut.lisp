@@ -135,7 +135,7 @@
 ;;       universal time
 ;;
 ;; function
-;; W-YT (ut &optional (pattern "YYYY-MM-DD hh:mm:ss"))
+;; WRITE-TIME-STRING (ut &optional (pattern "YYYY-MM-DD hh:mm:ss"))
 ;;
 ;;    -- write the universal `UT' as a string according to the pattern string
 ;;       `PATTERN'
