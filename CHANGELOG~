@@ -1,0 +1,11 @@
+Version 0.1.1
+Added "log environment" architecture so user can roll own LOGV/LOGVS/FORMAT-LOG like
+functions and macros
+Replaced configuration variable architecture [*LOG-PREFIX-STRING,
+*LOG-THREAD-NAME-P*, and *LOG-TIME-P*] with LOG-SETTING accessor [a SETF-able
+function] that can access or sets :LOG-OUTPUT and :LOG-PREFIX-STRING-FACTORY
+settings for an individual log environment
+
+Version 0.1
+I forgot when
+Initial public release http://groups.google.com/group/cl-terrace
