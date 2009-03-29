@@ -7,10 +7,9 @@ lisp universal time as strings
 universal times stored as strings using `READ-TIME-STRING` and `WRITE-TIME-STRING`
 have the following advantages over normal universal times stored as integers:
  
-1. they are human readable and thus less prone to bugs
-2. they are easier to use when interacting with external databases or other
-   programs that expect times dates encoded as strings
-3. they are ISO-8601 compliant (by default)
+1. They are human readable and thus less prone to bugs
+2. They are easier to use when interacting with external databases or other programs that expect times dates encoded as strings
+3. They are ISO-8601 compliant (by default)
 
        CL-USER> (defvar now (get-universal-time))
        NOW
@@ -99,26 +98,24 @@ The default pattern for both `READ-TIME-STRING` and `WRITE-TIME-STRING` is
  
 `READ-TIME-STRING` will accept two kinds of junk:
  
-1. difference literal characters that don't effect the length of the string.
-   for example, the default pattern can read strings that look like this:
+1. Different literal characters that don't effect the length of the string. For example, the default pattern can read strings that look like this:
  
-    YYYY-MM-DD hh:mm:ss
+       YYYY-MM-DD hh:mm:ss
  
    but it can also read strings that look like this:
  
-    YYYY-MM-DDThh:mm:ss
+       YYYY-MM-DDThh:mm:ss
  
    _Note: numberic characters in the wrong spot will probably screw things up because
 it looks like part of the date_
        
-2. there can be junk at the _end_ of the string. so the default pattern can
-read string that look like this:
+2. there can be junk at the _end_ of the string. so the default pattern can read string that look like this:
  
-    YYYY-MM-DD hh:mm:ss
+       YYYY-MM-DD hh:mm:ss
  
    but it can also read strings that look like this:
  
-    YYYY-MM-DD hh:mm:ss.0000Z
+       YYYY-MM-DD hh:mm:ss.0000Z
  
 ## API
 
@@ -126,12 +123,12 @@ read string that look like this:
 
 - - -
  
-   _Function_. Reads `STRING` according to the pattern string `PATTERN` and returns a
-   Universal Time intiger.
+_Function_. Reads `STRING` according to the pattern string `PATTERN` and returns a
+Universal Time intiger.
  
 * `WRITE-TIME-STRING (ut &optional (pattern "YYYY-MM-DD hh:mm:ss"))`
 
 - - -
  
-   _Function_. Writes the universal time integer `UT` as a string according to the
-    pattern string `PATTERN`
+_Function_. Writes the universal time integer `UT` as a string according to the
+pattern string `PATTERN`
